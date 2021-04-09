@@ -17,8 +17,9 @@ echo "hello World, this script was written by Margo Diricks!"
 PATH_input="$HOME/YourFolder"
 
 #Read notation
-Fw="R1"
-Rv="R2"
+FastqType=".fastq.gz" # Extension of your fastq file
+Fw="_R1" # Forward read notation
+Rv="_R2" # Reverse read notation
 
 ###Parameters###
 #Expected genome size
@@ -41,14 +42,14 @@ mkdir $PATH_output/FinalAssemblies
 rm $PATH_output/FinalAssemblies/Failed.txt
 
 #Loop through all the raw fastQ files
-for fastq in $PATH_input/*_$Fw.fastq.gz 
+for fastq in $PATH_input/*$Fw$FastqType 
 do
 	SampleName=$(basename $fastq| cut -d '_' -f 1)
 	if [ -d $PATH_output/$SampleName ]
 	then
 		echo "Sample was already analysed"
 	else
-		shovill --R1 $fastq --R2 $(echo $fastq | sed "s/$Fw.fastq.gz$/$Rv.fastq.gz/1") --outdir $PATH_output/$SampleName --gsize $egs --depth $cov --trim --noreadcorr --assembler $ass 
+		shovill --R1 $fastq --R2 $(echo $fastq | sed "s/$Fw$FastqType$/$Rv$FastqType/1") --outdir $PATH_output/$SampleName --gsize $egs --depth $cov --trim --noreadcorr --assembler $ass 
 
 #Move the final assembly to a seperate folder and rename file
 		if [ -f "$PATH_output/$SampleName/contigs.fa" ]
