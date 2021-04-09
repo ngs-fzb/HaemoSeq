@@ -31,7 +31,7 @@ PATH_output="$HOME/YourFolder"
 Tree="BlastP_"$blastp"core_"$cp"_FastTree_GTR_gamma.newick"
 
 #Amount Of Threads to be used
-Threads="8"
+Threads=1
 
 ################################################################################################################################################################
 
