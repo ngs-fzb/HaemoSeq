@@ -13,7 +13,7 @@ echo "hello World, this script was written by Margo Diricks!"
 # bash $HOME/Scripts/Name_Script.sh"
 
 ###Inputfiles###
-#Type: Paired-end raw fastQ files (with sufficient coverage!)
+#Directory where you have stored the (raw) paired-end illumina fastQ files
 PATH_input="$HOME/YourFolder"
 
 #Read notation
