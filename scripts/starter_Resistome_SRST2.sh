@@ -50,7 +50,7 @@ Jobs=10 #Jobs=0 means you will run as many jobs in parallel as possible. Please 
 
 #Resistome analysis in parallel
 source `which env_parallel.bash`
-env_parallel -j $Jobs --compress --tmpdir $PATH_temp 'srst2 --input_pe {} $(echo {} | sed "s/_R1$FastqType$/_R2$FastqType/1") --forward $Fw --reverse $Rv --log --gene_db $geneDB --gene_max_mismatch $GeneMaxMis --max_divergence $MaxDiv --min_coverage $MinCov --output $PATH_output/$(echo {/}| cut -d '_' -f 1) --use_existing_scores --use_existing_pileup' ::: $PATH_input/*$Fw$FastqType
+env_parallel -j $Jobs --compress --tmpdir $PATH_temp 'srst2 --input_pe {} $(echo {} | sed "s/$Fw$FastqType$/$Rv$FastqType/1") --forward $Fw --reverse $Rv --log --gene_db $geneDB --gene_max_mismatch $GeneMaxMis --max_divergence $MaxDiv --min_coverage $MinCov --output $PATH_output/$(echo {/}| cut -d '_' -f 1) --use_existing_scores --use_existing_pileup' ::: $PATH_input/*$Fw$FastqType
 
 #Remove pileup and bam files, only keep result files
 rm $PATH_output/*.pileup
