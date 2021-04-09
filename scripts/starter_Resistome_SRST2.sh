@@ -34,7 +34,7 @@ GeneMaxMis=50
 MaxDiv=15
 #3. Minimum %coverage cutoff for gene reporting (in full genes and genes report) - C
 MinCov=90
-#Note: default values are 50M-15D-90C
+#Note: default values are 50M-15D-90C. Severely truncated genes or homologues with not enough similarity will not be detected using these values!
 
 ###Output files###
 #1. Directory where the final files will be stored
