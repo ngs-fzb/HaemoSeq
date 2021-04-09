@@ -53,7 +53,7 @@ Name_itolFile_Decision_Serotype=$Analysis"_SRST2_itol_Decision_Serotype"
 Name_itolFile_Decision_Subspecies=$Analysis"_SRST2_itol_Decision_Subspecies"
 
 #Amount of samples to be analyzed in parallel 
-Jobs=30 #Jobs=0 means you will run as many jobs in parallel as possible. Please note that this can sometimes lead to problems. Preferably use the amount of CPUs/threads you have available.
+Jobs=1 #Jobs=0 means you will run as many jobs in parallel as possible. Please note that this can sometimes lead to problems. Preferably use the amount of CPUs/threads you have available.
 #Important note: if it is the first time you use a reference database (fasta file defined as geneDB), you need to set this value once at 1 to generate the fai and bt2 files of the reference database. Afterwards, you can set the amount of jobs depending on your computational resources. Please consult the GNU parallel manual for more info. 
 
 ###EstimatedTime###
