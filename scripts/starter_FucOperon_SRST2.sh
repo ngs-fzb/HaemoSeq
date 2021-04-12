@@ -50,9 +50,9 @@ Jobs=1 #Jobs=0 means you will run as many jobs in parallel as possible. Please n
 ################################################################################################################################################################
 #Detection of fucose genes in parallel
 source `which env_parallel.bash`
-env_parallel -j $Jobs --compress --tmpdir $TmpDi 'srst2 --input_pe {} $(echo {} | sed "s/$Fw$FastqType$/$Rv$FastqType/1") --forward $Fw --reverse $Rv --log --gene_db $geneDB --gene_max_mismatch $GeneMaxMis --max_divergence $MaxDiv --min_coverage $MinCov --output $PATH_output/$(echo {/}| cut -d '_' -f 1) --use_existing_scores --use_existing_pileup' ::: $PATH_input/*_R1$FastqType
+env_parallel -j $Jobs --compress --tmpdir $PATH_temp 'srst2 --input_pe {} $(echo {} | sed "s/$Fw$FastqType$/$Rv$FastqType/1") --forward $Fw --reverse $Rv --log --gene_db $geneDB --gene_max_mismatch $GeneMaxMis --max_divergence $MaxDiv --min_coverage $MinCov --output $PATH_output/$(echo {/}| cut -d '_' -f 1) --use_existing_scores --use_existing_pileup' ::: $PATH_input/*_R1$FastqType
 
-rm $PATH_output_res/Rerun.txt
+rm $PATH_output/Rerun.txt
 for log in $PATH_output/*.log
 do
 	Pr=$(grep -m 1 "sorted.bam' failed with non-zero exit status" $log | sed 's/__/|/' | cut -d '|' -f 2 | cut -d '.' -f 1 )
