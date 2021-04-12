@@ -63,7 +63,7 @@ done
 
 # Create summary file (as quality check)
 #Make header of the summary file 
-echo -e "Sample\tEstimated_depth(x)\tRead_max_len\tRead_avg_len\tRead_min_len\tSurviving_Read_Pairs_trimmomatic_perc\tFw_surviving_trimmomatic_perc\tRv_surviving_trimmomatic_perc\tDropped_trimmomatic_perc\tFlash_CombinedPairs_perc\tWalltime\tContigAmount\tMinContigLength\tAssemblyLength\tAssemblyRel%("$egs")" >> $PATH_output/"shovillOutput_summary"
+echo -e "Sample\tEstimated_depth(x)\tRead_max_len\tRead_avg_len\tRead_min_len\tSurviving_Read_Pairs_trimmomatic_perc\tFw_surviving_trimmomatic_perc\tRv_surviving_trimmomatic_perc\tDropped_trimmomatic_perc\tFlash_CombinedPairs_perc\tWalltime\tContigAmount\tMinContigLength\tAssemblyLength\tAssemblyRel%("$egs")" >> $PATH_output/"shovillOutput_summary.txt"
 
 #Loop through all the generated log files and extract necessary info
 for log in $PATH_output/*/shovill.log
