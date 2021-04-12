@@ -84,7 +84,7 @@ do
 	Assembly_length=$(grep -P -o 'Assembly.is.*?,' $log| cut -d ' ' -f 3 | sed 's/,//')
 	Assembly_rel=$(grep 'Assembly.is' $log| grep -Po '\(.*?\)'| sed -e 's/)//' | sed -e 's/(//' | sed -e 's/%//')
 	
-	paste --delimiter='\t'  <(basename $(dirname $log))	<(echo $EstSeqDepth) <(echo $max_len) <(echo $avg_len) <(echo $min_len) <(echo $Surviving_Read_Pairs_trimmomatic_perc) <(echo $Fw_surviving_trimmomatic_perc) <(echo $Rv_surviving_trimmomatic_perc) <(echo $Dropped_trimmomatic_perc) <(echo $Flash_CombinedPairs_perc) <(echo $Walltime) <(echo $Contig_amount) <(echo $min_contig_length) <(echo $Assembly_length) <(echo $Assembly_rel) >> $PATHNAME/"shovillOutput_summary.txt"
+	paste --delimiter='\t'  <(basename $(dirname $log))	<(echo $EstSeqDepth) <(echo $max_len) <(echo $avg_len) <(echo $min_len) <(echo $Surviving_Read_Pairs_trimmomatic_perc) <(echo $Fw_surviving_trimmomatic_perc) <(echo $Rv_surviving_trimmomatic_perc) <(echo $Dropped_trimmomatic_perc) <(echo $Flash_CombinedPairs_perc) <(echo $Walltime) <(echo $Contig_amount) <(echo $min_contig_length) <(echo $Assembly_length) <(echo $Assembly_rel) >> $PATH_output/"shovillOutput_summary.txt"
 done
 
 ################################################################################################################################################################
