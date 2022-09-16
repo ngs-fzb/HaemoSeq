@@ -6,4 +6,5 @@ For Research use only. Not for use in diagnostic procedures.
 For complete installation instructions, description and usage examples please read the manual.
 
 # Citation
-Publication is currently under review
+Diricks et al., 2022: https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-022-01017-x
+
