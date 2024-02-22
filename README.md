@@ -3,7 +3,7 @@ A collection of bash starter scripts and curated reference databases for the who
 For Research use only. Not for use in diagnostic procedures.
 
 # Getting Started
-For complete installation instructions, description and usage examples please read the manual.
+For complete installation instructions, description and usage examples please send a mail to mdiricks@fz-borstel.de.
 
 # Citation
 Diricks et al., 2022: https://genomemedicine.biomedcentral.com/articles/10.1186/s13073-022-01017-x
