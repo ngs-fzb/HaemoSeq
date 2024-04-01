@@ -1,6 +1,29 @@
 # HaemoSeq
-A collection of bash starter scripts and curated reference databases for the whole genome sequencing based analysis of human-related Haemophilus isolates including _H. influenzae_ (typeable and NTHi), _H. haemolyticus_ (subsp. _intermedius_), _H. parahaemolyticus_, _H. paraphrohaemolyticus_, _H. parainfluenzae_, _H. sputorum_, _H. pittmaniae_ and _H. ducreyi_.
-For Research use only. Not for use in diagnostic procedures.
+HaemoSeq is a bioinformatic pipeline for whole genome sequencing based analysis of human-related Haemophilus isolates including H. influenzae (typeable and NTHi), H. haemolyticus (subsp. intermedius), H. parahaemolyticus, H. paraphrohaemolyticus, H. parainfluenzae, H. sputorum, H. pittmaniae and H. ducreyi.
+It runs on linux and accepts FastQ (illumina) and FastA files as input.
+It includes:
+
+1.	Quality control of raw sequence reads
+[Input: FastQ files; Required tools: FastQC and multiQC]
+2.	Contamination detection 
+[Input: FastQ files or FastA files; Required tools: kraken2]
+3.	Preprocessing of raw sequence reads (e.g. adapter removal) 
+[Required tools: fastp]
+4.	Haemophilus (sub)species and serotype prediction using a custom marker database 
+[Input: FastQ files; Required tools: srst2 and GNU parallel; Required database: Class_Haemophilus_and_Serotyping-v2.0.fasta]
+5.	Multi-locus sequence typing (MLST)
+[Input: FastQ files; Required tools: srst2; Required database: pubMLST]
+6.	Assembly of sequence reads
+[Input: FastQ files; Required tools: Shovill; Output: FastA files]
+7.	Fast phylogenetic analysis using Mashtree
+[Input: FastQ files or FastA files; Required tools: Mashtree]
+8.	Detection of known plasmids
+[Input: FastQ files; Required tools: srst2 and seqkit; Required database: PLSDB or custom]
+9.	De novo prediction of plasmid contigs
+[Input: FastQ files; Required tools: platon and/or plasmidspades]
+10.	Resistance and virulence gene prediction
+[Input: FastA files; Required tools: AMRfinder+]
+
 
 # Getting Started
 For complete installation instructions, description and usage examples please send a mail to mdiricks@fz-borstel.de.
