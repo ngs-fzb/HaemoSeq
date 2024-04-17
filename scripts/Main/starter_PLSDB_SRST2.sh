@@ -30,9 +30,9 @@ set="SampleSet"
 conda_env="SRST2"
 PATH_tmp="$HOME/tmp"
 
-GeneMaxMis=200 #M - Maximum number of mismatches allowed during mapping
-MaxDiv=80 #D - Maximum %divergence cutoff for gene reporting (in genes report)
-MinCov=40 #C - Minimum %coverage cutoff for gene reporting (in full genes and genes report)
+GeneMaxMis=10 #M - Maximum number of mismatches allowed during mapping
+MaxDiv=10 #D - Maximum %divergence cutoff for gene reporting (in genes report)
+MinCov=90 #C - Minimum %coverage cutoff for gene reporting (in full genes and genes report)
 
 
 ############################################################
