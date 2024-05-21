@@ -209,7 +209,7 @@ then
 	then 
 		echo "Starting kraken2 on FastQ files"
 		bash $PATH_scripts/starter_kraken2.sh -i $PATH_fastQ -o $PATH_output -d $db_kraken2 -k $db_krona -e $conda_env_kraken2
-		perl $PATH_scripts/kraken_parse_results.v2.0.0.pl -s "$species" $PATH_output/kraken2/*.report
+		perl $PATH_scripts/kraken_parse_results.pl -s "$species" $PATH_output/kraken2/*.report
 	else
 		echo "Please provide all required arguments: -i PATH_fastQ, -o PATH_output, db_krona and db_kraken2!"
 	fi
